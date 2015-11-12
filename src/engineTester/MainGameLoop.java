@@ -3,6 +3,7 @@
     LESSON 3 - RENDERING 
         *index buffer - jest po to, żeby powiedzieć openGLowi w jaki sposób ma połączyć wierzchołki
         może jakies zmianki???
+dodaliśmy model, co dalej? trzeba wormsa wczytac w jednej czesci
 */
 
 package engineTester;
