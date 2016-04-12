@@ -155,7 +155,7 @@ public class MainGameLoop {
         //pętla
         while(!Display.isCloseRequested()){
             //if(entity.getPosition().x > 1.5f)
-            entity.increaseRotation(0,1,0);
+            entity.increaseRotation(1,1,1);
             //entity.increasePosition(0, 0, -0.01f);
             entity.move();
             camera.move();
