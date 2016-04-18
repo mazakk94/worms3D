@@ -1,7 +1,7 @@
 # Blender MTL File: 'Worm.blend'
 # Material Count: 1
 
-newmtl RefRep.221_Body.p
+newmtl RefRep.223_Hands.
 Ns 86.274510
 Ka 0.000000 0.000000 0.000000
 Kd 0.327680 0.327680 0.327680
@@ -9,5 +9,5 @@ Ks 0.062500 0.062500 0.062500
 Ni 1.000000
 d 1.000000
 illum 2
-map_Kd C:\Users\LinkWolfen\Documents\Worm\Textures\Body.png
-map_Tr C:\\Users\\LinkWolfen\\Documents\\Worm\\Textures\\Body.png
+map_Kd C:\Users\LinkWolfen\Documents\Worm\Textures\Hands.png
+map_Tr C:\\Users\\LinkWolfen\\Documents\\Worm\\Textures\\Hands.png
