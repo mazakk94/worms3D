@@ -4,4 +4,6 @@
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 
-[ ] wczytywanie modelu wormsa
+[ ] wczytywanie modelu wormsa - almost done !
+[x] loadworms()
+[ ] poruszanie sie wormsa
