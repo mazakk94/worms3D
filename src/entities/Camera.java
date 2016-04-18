@@ -5,6 +5,7 @@ package entities;
 
 import org.lwjgl.input.Keyboard;
 import org.lwjgl.opengl.GL11;
+import static org.lwjgl.opengl.GL11.glRotatef;
 import org.lwjgl.util.vector.Vector3f;
 
 public class Camera {
@@ -57,7 +58,7 @@ public class Camera {
 
     public void lookThrough() {
         //roatate the pitch around the X axis
-        GL11.glRotatef(pitch, 1.0f, 0.0f, 0.0f);
+        glRotatef(pitch, 1.0f, 0.0f, 0.0f);
         //roatate the yaw around the Y axis
         GL11.glRotatef(yaw, 0.0f, 1.0f, 0.0f);
         //translate to the position vector's location

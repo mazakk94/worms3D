@@ -4,6 +4,8 @@
 ///////////////////////////////////////////
 ///////////////////////////////////////////
 
-[ ] wczytywanie modelu wormsa - almost done !
+[x] wczytywanie modelu wormsa
 [x] loadworms()
-[ ] poruszanie sie wormsa
+[x] poruszanie sie wormsa
+[ ] klasa worm potrzebna do kamery
+[ ] chodzenie kamery
