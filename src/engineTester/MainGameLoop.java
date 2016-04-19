@@ -8,75 +8,22 @@
 package engineTester;
 
 import entities.Camera;
-import entities.Entity;
 import entities.Worm;
-import java.util.HashMap;
 import renderEngine.DisplayManager;
 import renderEngine.Loader;
 import renderEngine.Renderer;
-import models.RawModel;
-import models.TexturedModel;
 import org.lwjgl.input.Mouse;
 import org.lwjgl.opengl.Display;
-import org.lwjgl.opengl.GL11;
-import org.lwjgl.util.vector.Vector3f;
-import renderEngine.OBJLoader;
 import shaders.StaticShader;
-import textures.ModelTexture;
 
 public class MainGameLoop {
-
-    public static HashMap<Entity, Loader> initWorm() {
-
-        HashMap<Entity, Loader> wormEntities = new HashMap();
-
-        Loader handsLoader = new Loader();
-        RawModel ObjHands = OBJLoader.loadObjModel("Hands", handsLoader);
-        TexturedModel smHands = new TexturedModel(ObjHands, new ModelTexture(handsLoader.loadTexture("Hands")));
-        Entity enHands = new Entity(smHands, new Vector3f(0, 0, -50), 0, 0, 0, 1);
-        wormEntities.put(enHands, handsLoader);
-
-        Loader bodyLoader = new Loader();
-        RawModel ObjBody = OBJLoader.loadObjModel("worm", bodyLoader);
-        TexturedModel smBody = new TexturedModel(ObjBody, new ModelTexture(bodyLoader.loadTexture("body")));
-        Entity enBody = new Entity(smBody, new Vector3f(0, 0, -50), 0, 0, 0, 1);
-        wormEntities.put(enBody, bodyLoader);
-
-        Loader eyesLoader = new Loader();
-        RawModel ObjEyes = OBJLoader.loadObjModel("Eyes", eyesLoader);
-        TexturedModel smEyes = new TexturedModel(ObjEyes, new ModelTexture(eyesLoader.loadTexture("Eyes")));
-        Entity enEyes = new Entity(smEyes, new Vector3f(0, 0, -50), 0, 0, 0, 1);
-        wormEntities.put(enEyes, eyesLoader);
-
-        Loader teethLoader = new Loader();
-        RawModel ObjTeeth = OBJLoader.loadObjModel("Teeth", teethLoader);
-        TexturedModel smTeeth = new TexturedModel(ObjTeeth, new ModelTexture(teethLoader.loadTexture("Teeth")));
-        Entity enTeeth = new Entity(smTeeth, new Vector3f(0, 0, -50), 0, 0, 0, 1);
-        wormEntities.put(enTeeth, teethLoader);
-
-        return wormEntities;
-    }
-
-    public static void loadWorm(Entity[] wormEntities, StaticShader shader, Renderer renderer) {
-        for (Entity entity : wormEntities) {
-            entity.move();
-            //entity.increaseRotation(0, 1, 0);
-        }
-
-        for (Entity entity : wormEntities) {
-            renderer.render(entity, shader);
-        }
-    }
 
     public static void main(String[] args) { //testujemy naszą aplikacje
 
         DisplayManager.createDisplay(); //tworzymy displaya        
         //loader
-
+            
         Worm worm = new Worm();
-        HashMap<Entity, Loader> wormEntities = initWorm();
-        // keys -> Entities
-        // values -> Loaders
 
         StaticShader shader = new StaticShader();
         Renderer renderer = new Renderer(shader);
@@ -84,7 +31,13 @@ public class MainGameLoop {
         // RawModel model = loader.loadToVAO(vertices, textureCoords, indices); //rawmodel do 10 lekcji
         //TexturedModel staticModel = new TexturedModel(model, new ModelTexture(loader.loadTexture("image2"))); do 10
         //RTE
-        Camera camera = new Camera(0,0,0);
+       
+        
+        
+        //Camera camera = new Camera(0,0,0);
+        Camera camera = new Camera(worm);
+        
+        
         //pętla
 
         float dx = 0.0f;
@@ -96,10 +49,10 @@ public class MainGameLoop {
         while (!Display.isCloseRequested()) {
             camera.move();
 
-            dx = Mouse.getDX();
-            dy = Mouse.getDY();
+            //dx = Mouse.getDX();
+            //dy = Mouse.getDY();
 
-            System.out.println("dx: "+dx + " dy:" + dy);
+            //System.out.println("dx: "+ dx + " dy:" + dy);
                 //controll camera yaw from x movement fromt the mouse
             //camera.yaw(-dx * mouseSensitivity);
                 //controll camera pitch from y movement fromt the mouse
@@ -112,8 +65,8 @@ public class MainGameLoop {
             shader.start();
             shader.loadViewMatrix(camera);
             //logika gry
-            Entity entities[] = wormEntities.keySet().toArray(new Entity[wormEntities.size()]);
-            loadWorm(entities, shader, renderer);//todo 
+            
+            worm.loadWorm(shader, renderer);
 
             shader.stop();
             DisplayManager.updateDisplay();
@@ -123,7 +76,7 @@ public class MainGameLoop {
         }
         shader.cleanUp();
 
-        for (Loader loader : wormEntities.values()) {
+        for (Loader loader : worm.getHashEntities().values()) {
             loader.cleanUp();
         }
         // handsLoader.cleanUp();

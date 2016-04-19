@@ -27,11 +27,11 @@ public class Entity {
        
         if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) {
             increaseRotation(0, 0.5f, 0);
-            System.out.println(rotY);
+            //System.out.println(rotY);
         }
         if (Keyboard.isKeyDown(Keyboard.KEY_RIGHT)) {
             increaseRotation(0, -0.5f, 0);
-            System.out.println(rotY);
+            //System.out.println(rotY);
         }
         if (Keyboard.isKeyDown(Keyboard.KEY_UP) || Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {
 
@@ -61,9 +61,9 @@ public class Entity {
             
             // Calculate cotangent
             float coTanA = 1.0f / (float) Math.tan(rads);
-            System.out.println("Cotangent = " + coTanA);
+            //System.out.println("Cotangent = " + coTanA);
 
-            System.out.println(rotY);
+            //System.out.println(rotY);
             
             if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)){
                 right = !right;
@@ -83,8 +83,7 @@ public class Entity {
                 this.position.z-= 0.5f;
             }
             //jeszcze odleglosc
-            System.out.println("Position x" + this.position.x);
-            System.out.println("Position z" + this.position.z);
+            System.out.println("worm x: " + this.position.x + "\tz" + this.position.z);
         }
        
     }
