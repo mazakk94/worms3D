@@ -47,8 +47,8 @@ public class MainGameLoop {
         float movementSpeed = 10.0f; //move 10 units per second
 
         while (!Display.isCloseRequested()) {
-            camera.move();
-
+            
+            
             //dx = Mouse.getDX();
             //dy = Mouse.getDY();
 
@@ -65,7 +65,7 @@ public class MainGameLoop {
             shader.start();
             shader.loadViewMatrix(camera);
             //logika gry
-            
+            camera.move();
             worm.loadWorm(shader, renderer);
 
             shader.stop();

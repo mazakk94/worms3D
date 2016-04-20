@@ -24,7 +24,7 @@ public class Entity {
     }
 
     public void move() {
-       
+
         if (Keyboard.isKeyDown(Keyboard.KEY_LEFT)) {
             increaseRotation(0, 0.5f, 0);
             //System.out.println(rotY);
@@ -39,53 +39,51 @@ public class Entity {
             double degs = (double) rotY;
             // Convert degrees to radian
             float rads = (float) Math.toRadians(degs);
-            int quarter = (int)degs/90;
-            
+            int quarter = (int) degs / 90;
+
             boolean front = false;
             boolean right = false;
-            if(quarter == 3 || quarter == 0){
+            if (quarter == 3 || quarter == 0) {
                 front = true;
-            } else if (quarter == 2 || quarter == 1){
+            } else if (quarter == 2 || quarter == 1) {
                 front = false;
             } else {
                 System.out.println(quarter + ": quarter error!");
             }
-            
-            if(quarter == 1 || quarter == 0){
+
+            if (quarter == 1 || quarter == 0) {
                 right = true;
-            } else if (quarter == 2 || quarter == 3){
+            } else if (quarter == 2 || quarter == 3) {
                 right = false;
             } else {
                 System.out.println(quarter + ": quarter error2!");
             }
-            
+
             // Calculate cotangent
             float coTanA = 1.0f / (float) Math.tan(rads);
             //System.out.println("Cotangent = " + coTanA);
 
             //System.out.println(rotY);
-            
-            if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)){
+            if (Keyboard.isKeyDown(Keyboard.KEY_DOWN)) {
                 right = !right;
                 front = !front;
             }
-            
-            if (right == true)
+
+            if (right == true) {
                 this.position.x += 0.5f;
-            else {
-                this.position.x-= 0.5f;
+            } else {
+                this.position.x -= 0.5f;
             }
-            
-            
-            if (front == true)
+
+            if (front == true) {
                 this.position.z += 0.5f;
-            else {
-                this.position.z-= 0.5f;
+            } else {
+                this.position.z -= 0.5f;
             }
             //jeszcze odleglosc
             System.out.println("worm x: " + this.position.x + "\tz" + this.position.z);
         }
-       
+
     }
 
     //PRZESUWANIE OBIEKTU 
