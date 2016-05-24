@@ -4,6 +4,7 @@ import org.lwjgl.input.Mouse;
 import org.lwjgl.util.vector.Vector3f;
 
 public class Camera {
+    
 	
 	private float distanceFromPlayer = 35;
 	private float angleAroundPlayer = 0;
@@ -95,8 +96,5 @@ public class Camera {
 			angleAroundPlayer -= angleChange;
 		}
 	}
-	
-	
-	
 
 }

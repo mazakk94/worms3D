@@ -7,6 +7,6 @@
 [x] wczytywanie modelu wormsa
 [x] loadworms()
 [x] poruszanie sie wormsa
-[ ] klasa worm potrzebna do kamery
+[x] klasa worm potrzebna do kamery
 [ ] chodzenie kamery
 [ ] zrobienie modelu wormsa (1!)

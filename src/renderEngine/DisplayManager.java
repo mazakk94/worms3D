@@ -1,3 +1,8 @@
+
+/*
+ LESSON 1 - DISPLAY
+ */
+
 package renderEngine;
 
 import org.lwjgl.LWJGLException;
@@ -10,6 +15,7 @@ import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.PixelFormat;
 
 public class DisplayManager {
+    
 	
 	private static final int WIDTH = 1280;
 	private static final int HEIGHT = 720;
@@ -19,7 +25,7 @@ public class DisplayManager {
 	private static float delta;
 	
 	public static void createDisplay(){		
-		ContextAttribs attribs = new ContextAttribs(3,2)
+		ContextAttribs attribs = new ContextAttribs(3,2)  //3,2 - wersje opengla
 		.withForwardCompatible(true)
 		.withProfileCore(true);
 		
@@ -31,12 +37,18 @@ public class DisplayManager {
 		} catch (LWJGLException e) {
 			e.printStackTrace();
 		}
-		
+		 
+                        //mówimy mu gdzie ma renderować naszą gre
+                                 // LEWY GÓRNY, PRAWY DOLNY
 		GL11.glViewport(0,0, WIDTH, HEIGHT);
 		lastFrameTime = getCurrentTime();
+                
+                       
 	}
 	
 	public static void updateDisplay(){
+        //1. ustalamy FPSy
+        //2. update'ujemy 
 		Display.sync(FPS_CAP);
 		Display.update();
 		long currentFrameTime = getCurrentTime();
@@ -48,7 +60,7 @@ public class DisplayManager {
 		return delta;
 	}
 	
-	public static void closeDisplay(){
+	public static void closeDisplay(){ //zamykamy klatke
 		Display.destroy();
 	}
 	
@@ -58,5 +70,7 @@ public class DisplayManager {
 	
 	
 	
+
+
 
 }

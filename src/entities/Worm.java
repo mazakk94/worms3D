@@ -15,20 +15,14 @@ public class Worm {
     private HashMap<Entity, Loader> wormEntities;
     // keys -> Entities
     // values -> Loaders
+    private static final float RUN_SPEED = 20;
+    private static final float TURN_SPEED = 160;
 
     public Worm() {
         this.wormEntities = initWorm();
     }
 
-    public HashMap<Entity, Loader> getHashEntities() {
-        return wormEntities;
-    }
-
-    public Entity[] getWormEntities() {
-        Entity entities[];
-        entities = this.wormEntities.keySet().toArray(new Entity[this.wormEntities.size()]);
-        return entities;
-    }
+    
 
     private HashMap<Entity, Loader> initWorm() {
 
@@ -81,6 +75,17 @@ public class Worm {
     public Vector3f getPosition() {
         Entity[] entities = getWormEntities();
         return entities[0].getPosition();
+    }
+    
+    public HashMap<Entity, Loader> getHashEntities() {
+        return wormEntities;
+    }
+
+    public Entity[] getWormEntities() {
+        Entity entities[];
+        entities = this.wormEntities.keySet().toArray(new Entity[this.wormEntities.size()]);
+        
+        return entities;
     }
 
 }

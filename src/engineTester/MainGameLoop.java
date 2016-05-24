@@ -41,6 +41,7 @@ import water.WaterTile;
 
 public class MainGameLoop {
 
+    
 	public static void main(String[] args) {
 
 		DisplayManager.createDisplay();
@@ -226,6 +227,5 @@ public class MainGameLoop {
 		DisplayManager.closeDisplay();
 
 	}
-
 
 }
