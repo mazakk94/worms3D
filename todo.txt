@@ -9,3 +9,4 @@
 [x] poruszanie sie wormsa
 [ ] klasa worm potrzebna do kamery
 [ ] chodzenie kamery
+[ ] zrobienie modelu wormsa (1!)

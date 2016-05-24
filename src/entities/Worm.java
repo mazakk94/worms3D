@@ -63,10 +63,10 @@ public class Worm {
 
     public void loadWorm(StaticShader shader, Renderer renderer) {
         Entity[] entities = getWormEntities();
-        for (Entity entity : entities) {
-            entity.move();
-            //entity.increaseRotation(0, 1, 0);
-        }
+//        for (Entity entity : entities) {
+//            entity.move();
+//            //entity.increaseRotation(0, 1, 0);
+//        }
 
         for (Entity entity : entities) {
             renderer.render(entity, shader);
