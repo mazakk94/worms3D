@@ -11,6 +11,9 @@
             <file>file:/C:/Users/Mazi/Documents/NetBeansProjects/LWJGL2/src/engineTester/NewClass.java</file>
         </group>
         <group name="LWJGL2">
+            <file>file:/C:/Users/Mazi/Documents/NetBeansProjects/LWJGL2/src/entities/Entity.java</file>
+            <file>file:/C:/Users/Mazi/Documents/NetBeansProjects/LWJGL2/src/renderEngine/DisplayManager.java</file>
+            <file>file:/C:/Users/Mazi/Documents/NetBeansProjects/LWJGL2/src/entities/Camera.java</file>
             <file>file:/C:/Users/Mazi/Documents/NetBeansProjects/LWJGL2/todo.txt</file>
             <file>file:/C:/Users/Mazi/Documents/NetBeansProjects/LWJGL2/src/engineTester/MainGameLoop.java</file>
         </group>
