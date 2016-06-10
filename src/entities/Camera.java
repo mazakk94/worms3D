@@ -26,7 +26,7 @@ public class Camera {
 		calculateAngleAroundPlayer();
 		float horizontalDistance = calculateHorizontalDistance();
 		float verticalDistance = calculateVerticalDistance();
-                System.out.println("horizontal: "+horizontalDistance+"\tvertical: "+verticalDistance);
+                //System.out.println("horizontal: "+horizontalDistance+"\tvertical: "+verticalDistance);
 		calculateCameraPosition(horizontalDistance, verticalDistance);
 		this.yaw = 180 - (player.getRotY() + angleAroundPlayer);
 		yaw%=360;
@@ -59,7 +59,7 @@ public class Camera {
 		position.x = player.getPosition().x - offsetX;
 		position.z = player.getPosition().z - offsetZ;
 		position.y = player.getPosition().y + verticDistance + 4;
-                System.out.println("x: " + position.x + " y: " + position.y + " z: " + position.z);
+                //System.out.println("x: " + position.x + " y: " + position.y + " z: " + position.z);
 	}
 	
 	private float calculateHorizontalDistance(){

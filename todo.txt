@@ -8,5 +8,12 @@
 [x] loadworms()
 [x] poruszanie sie wormsa
 [x] klasa worm potrzebna do kamery
-[ ] chodzenie kamery
-[ ] zrobienie modelu wormsa (1!)
+[x] chodzenie kamery
+[x] zrobienie modelu wormsa (1!)
+
+[ ] logika gry turowej
+[ ] intro ekran
+[ ] strzelanie
+[x] blad wczytywania modelu
+[x] wczytywanie drugiego wormsa
+[ ] zmiana widoku i kontroli
