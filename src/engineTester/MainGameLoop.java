@@ -48,7 +48,7 @@ public class MainGameLoop {
         TerrainTexturePack texturePack = new TerrainTexturePack(backgroundTexture, rTexture, gTexture, bTexture);
         TerrainTexture blendMap = new TerrainTexture(loader.loadTexture("blendMap"));
 
-        Terrain terrain = new Terrain(0, -1, loader, texturePack, blendMap, "heightmap");
+        Terrain terrain = new Terrain(0, -1, loader, texturePack, blendMap, "heightmap2");
         List<Terrain> terrains = new ArrayList<>();
         terrains.add(terrain);
 

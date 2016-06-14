@@ -10,7 +10,7 @@ import toolbox.Maths;
 import entities.Camera;
 import entities.Light;
 
-public class TerrainShader extends ShaderProgram{
+public class TerrainShader extends ShaderProgram {
 	
 	private static final int MAX_LIGHTS = 4;
 	private static final String VERTEX_FILE = "src/shaders/terrainVertexShader.txt";

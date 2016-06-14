@@ -23,4 +23,4 @@
 [ ] model broni
 [ ] odliczanie czasu tury
 [ ] kolizja strzalu
-[ ] celownik
+[x] celownik

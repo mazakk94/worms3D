@@ -14,8 +14,7 @@ import org.lwjgl.opengl.GL11;
 import org.lwjgl.opengl.GL13;
 import org.lwjgl.opengl.PixelFormat;
 
-public class DisplayManager {
-    
+public class DisplayManager {    
 	
 	private static final int WIDTH = 1280;
 	private static final int HEIGHT = 720;
@@ -68,9 +67,5 @@ public class DisplayManager {
 		return Sys.getTime()*1000/Sys.getTimerResolution();
 	}
 	
-	
-	
-
-
 
 }

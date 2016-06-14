@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package toolbox;
 
 import org.lwjgl.input.Keyboard;
@@ -25,11 +20,7 @@ public class KeyboardHandler {
         return checkInputs();
     }
     
-    private int checkInputs() {        
-        //if (Keyboard.isKeyRelease(Keyboard.KEY_RETURN)) {            
-        //    turn = (turn+1)%2;		
-       //     System.out.println("turn: " + turn);
-      //  } 
+    private int checkInputs() {      
         while (Keyboard.next()) {
             if (Keyboard.getEventKeyState()) {
                 if (Keyboard.getEventKey() == Keyboard.KEY_RETURN) {
