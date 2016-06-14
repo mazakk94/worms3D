@@ -13,6 +13,7 @@ import org.lwjgl.util.vector.Vector4f;
 import entities.Camera;
 import entities.Entity;
 import entities.Light;
+import entities.Player;
 import models.TexturedModel;
 import normalMappingRenderer.NormalMappingRenderer;
 import shaders.StaticShader;
@@ -59,7 +60,7 @@ public class MasterRenderer {
 		return this.projectionMatrix;
 	}
 
-	public void renderScene(List<Entity> entities, List<Entity> normalEntities, List<Terrain> terrains, List<Light> lights,
+	public void renderScene(List<Player> entities, /*List<Entity> normalEntities,*/ List<Terrain> terrains, List<Light> lights,
 			Camera camera, Vector4f clipPlane) {
 		for (Terrain terrain : terrains) {
 			processTerrain(terrain);
@@ -67,9 +68,9 @@ public class MasterRenderer {
 		for (Entity entity : entities) {
 			processEntity(entity);
 		}
-		for(Entity entity : normalEntities){
-			processNormalMapEntity(entity);
-		}
+		//for(Entity entity : normalEntities){
+		//	processNormalMapEntity(entity);
+		//}
 		render(lights, camera, clipPlane);
 	}
 
