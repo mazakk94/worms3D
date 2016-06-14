@@ -12,8 +12,15 @@
 [x] zrobienie modelu wormsa (1!)
 
 [ ] logika gry turowej
+[x] chodzenie jak w strzelankach
 [ ] intro ekran
 [ ] strzelanie
 [x] blad wczytywania modelu
 [x] wczytywanie drugiego wormsa
-[ ] zmiana widoku i kontroli
+[x] zmiana widoku i kontroli
+[ ] pasek życia
+[ ] wygląd strzału
+[ ] model broni
+[ ] odliczanie czasu tury
+[ ] kolizja strzalu
+[ ] celownik

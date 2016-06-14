@@ -14,7 +14,7 @@ import entities.Camera;
 
 public class SkyboxRenderer {
 	
-	private static final float SIZE = 500f;
+	private static final float SIZE = 200f;
 	
 	private static final float[] VERTICES = {        
 	    -SIZE,  SIZE, -SIZE,
@@ -61,18 +61,18 @@ public class SkyboxRenderer {
 	};
 	
 	private static String[] TEXTURE_FILES = {"right", "left", "top", "bottom", "back", "front"};
-	private static String[] NIGHT_TEXTURE_FILES = {"nightRight", "nightLeft", "nightTop", "nightBottom", "nightBack", "nightFront"};
+	//private static String[] NIGHT_TEXTURE_FILES = {"nightRight", "nightLeft", "nightTop", "nightBottom", "nightBack", "nightFront"};
 	
 	private RawModel cube;
-	private int texture;
-	private int nightTexture;
+	//private int texture;
+//	private int nightTexture;
 	private SkyboxShader shader;
 	private float time =0;
 	
 	public SkyboxRenderer(Loader loader, Matrix4f projectionMatrix){
 		cube = loader.loadToVAO(VERTICES, 3);
-		texture = loader.loadCubeMap(TEXTURE_FILES);
-		nightTexture = loader.loadCubeMap(NIGHT_TEXTURE_FILES);
+		//texture = loader.loadCubeMap(TEXTURE_FILES);
+		//nightTexture = loader.loadCubeMap(NIGHT_TEXTURE_FILES);
 		shader = new SkyboxShader();
 		shader.start();
 		shader.connectTextureUnits();
@@ -98,8 +98,8 @@ public class SkyboxRenderer {
 		time %= 24000;
 		int texture1;
 		int texture2;
-		float blendFactor;		
-		if(time >= 0 && time < 5000){
+		float blendFactor = 0.0f;		
+		/*if(time >= 0 && time < 5000){
 			texture1 = texture;
 			texture2 = texture;
 			blendFactor = (time - 0)/(5000 - 0);
@@ -116,11 +116,11 @@ public class SkyboxRenderer {
 			texture2 = texture;
 			blendFactor = (time - 21000)/(24000 - 21000);
 		}
-
+*/
 		GL13.glActiveTexture(GL13.GL_TEXTURE0);
-		GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texture1);
+		//GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texture1);
 		GL13.glActiveTexture(GL13.GL_TEXTURE1);
-		GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texture2);
+		//GL11.glBindTexture(GL13.GL_TEXTURE_CUBE_MAP, texture2);
 		shader.loadBlendFactor(blendFactor);
 	}
 	

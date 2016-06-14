@@ -13,7 +13,7 @@ import renderEngine.Loader;
 public class TextMaster {
 	
 	private static Loader loader;
-	private static Map<FontType, List<GUIText>> texts = new HashMap<FontType, List<GUIText>>();
+	private static Map<FontType, List<GUIText>> texts = new HashMap<>();
 	private static FontRenderer renderer;
 	
 	public static void init(Loader theLoader){
@@ -32,7 +32,7 @@ public class TextMaster {
 		text.setMeshInfo(vao, data.getVertexCount());
 		List<GUIText> textBatch = texts.get(font);
 		if(textBatch == null){
-			textBatch = new ArrayList<GUIText>();
+			textBatch = new ArrayList<>();
 			texts.put(font, textBatch);
 		}
 		textBatch.add(text);

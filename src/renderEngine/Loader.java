@@ -23,7 +23,6 @@ import org.newdawn.slick.opengl.TextureLoader;
 import textures.TextureData;
 import de.matthiasmann.twl.utils.PNGDecoder;
 import de.matthiasmann.twl.utils.PNGDecoder.Format;
-import java.io.IOException;
 import org.newdawn.slick.util.ResourceLoader;
 
 public class Loader {

@@ -14,6 +14,8 @@ public class MousePicker {
 
 	private static final int RECURSION_COUNT = 200;
 	private static final float RAY_RANGE = 600;
+        private static final int WIDTH = 1280;
+	private static final int HEIGHT = 720;
 
 	private Vector3f currentRay = new Vector3f();
 
@@ -25,6 +27,8 @@ public class MousePicker {
 	private Vector3f currentTerrainPoint;
 
 	public MousePicker(Camera cam, Matrix4f projection, Terrain terrain) {
+                Mouse.setGrabbed(true);
+                Mouse.setCursorPosition(WIDTH/2, HEIGHT/2);
 		camera = cam;
 		projectionMatrix = projection;
 		viewMatrix = Maths.createViewMatrix(camera);

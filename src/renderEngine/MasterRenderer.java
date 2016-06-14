@@ -42,9 +42,9 @@ public class MasterRenderer {
 
 	private SkyboxRenderer skyboxRenderer;
 
-	private Map<TexturedModel, List<Entity>> entities = new HashMap<TexturedModel, List<Entity>>();
-	private Map<TexturedModel, List<Entity>> normalMapEntities = new HashMap<TexturedModel, List<Entity>>();
-	private List<Terrain> terrains = new ArrayList<Terrain>();
+	private Map<TexturedModel, List<Entity>> entities = new HashMap<>();
+	private Map<TexturedModel, List<Entity>> normalMapEntities = new HashMap<>();
+	private List<Terrain> terrains = new ArrayList<>();
 
 	public MasterRenderer(Loader loader) {
 		enableCulling();
@@ -115,7 +115,7 @@ public class MasterRenderer {
 		if (batch != null) {
 			batch.add(entity);
 		} else {
-			List<Entity> newBatch = new ArrayList<Entity>();
+			List<Entity> newBatch = new ArrayList<>();
 			newBatch.add(entity);
 			entities.put(entityModel, newBatch);
 		}
@@ -127,7 +127,7 @@ public class MasterRenderer {
 		if (batch != null) {
 			batch.add(entity);
 		} else {
-			List<Entity> newBatch = new ArrayList<Entity>();
+			List<Entity> newBatch = new ArrayList<>();
 			newBatch.add(entity);
 			normalMapEntities.put(entityModel, newBatch);
 		}
