@@ -4,7 +4,6 @@ in vec2 pass_textureCoordinates;
 in vec3 surfaceNormal;
 in vec3 toLightVector[4];
 in vec3 toCameraVector;
-in float visibility;
 
 out vec4 out_Color;
 
@@ -24,9 +23,9 @@ void main(void){
 	vec3 totalSpecular = vec3(0.0);
 	
 	for(int i=0;i<4;i++){
-		float distance = length(toLightVector[i]);
+		float distance = length(toLightVector[i]);//[i]);
 		float attFactor = attenuation[i].x + (attenuation[i].y * distance) + (attenuation[i].z * distance * distance);
-		vec3 unitLightVector = normalize(toLightVector[i]);	
+		vec3 unitLightVector = normalize(toLightVector[i]);//[i]);	
 		float nDotl = dot(unitNormal,unitLightVector);
 		float brightness = max(nDotl,0.0);
 		vec3 lightDirection = -unitLightVector;
@@ -45,5 +44,5 @@ void main(void){
 	}
 
 	out_Color =  vec4(totalDiffuse,1.0) * textureColour + vec4(totalSpecular,1.0);
-	out_Color = mix(vec4(skyColour,1.0),out_Color, visibility);
+	out_Color = mix(vec4(skyColour,1.0),out_Color, 1);
 }

@@ -8,7 +8,6 @@ out vec2 pass_textureCoordinates;
 out vec3 surfaceNormal;
 out vec3 toLightVector[4];
 out vec3 toCameraVector;
-out float visibility;
 
 uniform mat4 transformationMatrix;
 uniform mat4 projectionMatrix;
@@ -34,6 +33,7 @@ void main(void){
 	vec4 positionRelativeToCam = viewMatrix * worldPosition;
 	gl_Position = projectionMatrix * positionRelativeToCam;
 	pass_textureCoordinates = (textureCoordinates/numberOfRows) + offset;
+        //return offset;
 	
 	vec3 actualNormal = normal;
 	if(useFakeLighting > 0.5){
@@ -43,11 +43,10 @@ void main(void){
 	surfaceNormal = (transformationMatrix * vec4(actualNormal,0.0)).xyz;
 	for(int i=0;i<4;i++){
 		toLightVector[i] = lightPosition[i] - worldPosition.xyz;
+		//toLightVector = lightPosition - worldPosition.xyz;
 	}
 	toCameraVector = (inverse(viewMatrix) * vec4(0.0,0.0,0.0,1.0)).xyz - worldPosition.xyz;
 	
 	float distance = length(positionRelativeToCam.xyz);
-	visibility = exp(-pow((distance*density),gradient));
-	visibility = clamp(visibility,0.0,1.0);
 	
 }

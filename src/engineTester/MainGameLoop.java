@@ -114,7 +114,7 @@ public class MainGameLoop {
 
             camera.move();
             picker.update();
-            renderer.renderScene(players, terrains, lights, camera, new Vector4f(0, -1, 0, 100000));
+            renderer.renderScene(players, terrains, lights, camera, new Vector4f(0, -1, 0, 100000));// new Vector4f(0, -1, 0, 100000));
             guiRenderer.render(guiTextures);
             TextMaster.render();
 
