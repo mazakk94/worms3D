@@ -13,7 +13,6 @@ import entities.Camera;
 import entities.Light;
 import entities.Player;
 import models.TexturedModel;
-//import normalMappingRenderer.NormalMappingRenderer;
 import shaders.StaticShader;
 import shaders.TerrainShader;
 import skybox.SkyboxRenderer;
@@ -37,7 +36,6 @@ public class MasterRenderer {
 	private TerrainRenderer terrainRenderer;
 	private TerrainShader terrainShader = new TerrainShader();
 	
-	//private NormalMappingRenderer normalMapRenderer;
 
 	private SkyboxRenderer skyboxRenderer;
 
@@ -51,14 +49,13 @@ public class MasterRenderer {
 		renderer = new EntityRenderer(shader, projectionMatrix);
 		terrainRenderer = new TerrainRenderer(terrainShader, projectionMatrix);
 		skyboxRenderer = new SkyboxRenderer(loader, projectionMatrix);
-		//normalMapRenderer = new NormalMappingRenderer(projectionMatrix);
 	}
 
 	public Matrix4f getProjectionMatrix() {
 		return this.projectionMatrix;
 	}
 
-	public void renderScene(List<Player> entities, /*List<Entity> normalEntities,*/ List<Terrain> terrains, List<Light> lights,
+	public void renderScene(List<Player> entities, List<Terrain> terrains, List<Light> lights,
 			Camera camera) {
 		for (Terrain terrain : terrains) {
 			processTerrain(terrain);
@@ -128,7 +125,6 @@ public class MasterRenderer {
 	public void cleanUp() {
 		shader.cleanUp();
 		terrainShader.cleanUp();
-		//normalMapRenderer.cleanUp();
 	}
 
 	public void prepare() {

@@ -90,7 +90,6 @@ public class MainGameLoop {
         pickers[0] = new MousePicker(cameras[0], renderer.getProjectionMatrix(), terrain);
         pickers[1] = new MousePicker(cameras[1], renderer.getProjectionMatrix(), terrain);
 
-       // WaterFrameBuffers buffers = new WaterFrameBuffers();
         int turn = 0;
         tmpPlayer = players.get(turn);
         Camera camera = cameras[turn];
