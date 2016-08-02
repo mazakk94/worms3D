@@ -18,7 +18,7 @@ public class SkyboxRenderer {
 	private static final float[] VERTICES = {        
 	    -SIZE,  SIZE, -SIZE,
 	    -SIZE, -SIZE, -SIZE,
-	    SIZE, -SIZE, -SIZE,
+	     SIZE, -SIZE, -SIZE,
 	     SIZE, -SIZE, -SIZE,
 	     SIZE,  SIZE, -SIZE,
 	    -SIZE,  SIZE, -SIZE,

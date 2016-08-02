@@ -146,6 +146,9 @@ public class Player {
         //if (dx != 0 || dz != 0)
         //System.out.println("dx " + dx + " dz " + dz);
         //System.out.println("x " + super.getPosition().x + " y " + super.getPosition().y + " z " + super.getPosition().z);
+        
+        
+        
         increasePosition(distance, 0, zDistance);
         //float x = super.getPosition().x;
         //float y = super.getPosition().y;
